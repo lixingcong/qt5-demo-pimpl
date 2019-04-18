@@ -15,4 +15,10 @@ Label::Label(QWidget *parent) : Widget(*new LabelPrivate, parent)
 	auto d=static_cast<LabelPrivate*>(d_func());
 
 	qDebug("Label Data=%d",d->dataB);
+	d->printLabel();
+}
+
+void Label::printLabel()
+{
+	qDebug("Label!");
 }

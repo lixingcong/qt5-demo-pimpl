@@ -18,8 +18,15 @@ class LabelPrivate : public WidgetPrivate
 	Q_DECLARE_PUBLIC(Label)
 
 public:
-	LabelPrivate():WidgetPrivate()
+	LabelPrivate():WidgetPrivate(),
+		dataB(200)
 	{
+	}
+
+	void printLabel()
+	{
+		Q_Q(Label);
+		q->printLabel();
 	}
 
 	int dataB;

@@ -22,6 +22,16 @@ public:
 	{
 	}
 
+	virtual ~WidgetPrivate()
+	{
+	}
+
+	void printWidget()
+	{
+		Q_Q(Widget);
+		q->printWidget();
+	}
+
 	int data;
 protected:
 	Widget *q_ptr; // q-ptr needs to be initialized

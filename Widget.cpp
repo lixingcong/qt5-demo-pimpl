@@ -14,11 +14,11 @@ Widget::Widget(QWidget *parent)
 	: QWidget(parent),
 	  d_ptr(new WidgetPrivate)
 {
-	d_ptr->q_ptr=this; // must set value
-
 	Q_D(Widget);
+	d->q_ptr=this; // must set value
 
-	qDebug("D=%d",d->data);
+	qDebug("Widget Data=%d",d->data);
+	d->printWidget();
 }
 
 Widget::~Widget()
@@ -26,8 +26,14 @@ Widget::~Widget()
 	delete d_ptr;
 }
 
-Widget::Widget(WidgetPrivate& d, QWidget* parent):QWidget(parent),
-	d_ptr(&d)
+void Widget::printWidget()
 {
-	d_ptr->q_ptr=this; // must set value
+	qDebug("Widget!");
+}
+
+Widget::Widget(WidgetPrivate& dd, QWidget* parent):QWidget(parent),
+	d_ptr(&dd)
+{
+	Q_D(Widget);
+	d->q_ptr=this; // must set value
 }

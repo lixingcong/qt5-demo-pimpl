@@ -22,8 +22,10 @@ public:
 	Widget(QWidget *parent = 0);
 	~Widget();
 
+	void printWidget();
+
 protected:
-	Widget(WidgetPrivate &d, QWidget *parent = 0);
+	Widget(WidgetPrivate &dd, QWidget *parent = 0);
 	WidgetPrivate* d_ptr;
 	Q_DECLARE_PRIVATE(Widget)
 };

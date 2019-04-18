@@ -18,6 +18,8 @@ class Label : public Widget
 
 public:
 	explicit Label(QWidget *parent = nullptr);
+
+	void printLabel();
 };
 
 #endif // LABEL_H
